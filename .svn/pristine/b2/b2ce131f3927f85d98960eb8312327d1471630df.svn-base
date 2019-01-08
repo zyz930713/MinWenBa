@@ -1,0 +1,49 @@
+<!--pages/my-questions/my-questions.wxml-->
+
+
+<view class='container'>
+  <view wx:for="{{questionsItem}}" wx:key="id">
+    <view class='questionsItem'>
+      <view><text class='course-name'>{{item.CourseName}}</text></view>
+      <text class='quesDec'>{{item.QuestionContent}}</text>
+      <text 
+          wx:if="{{item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabY}}
+          </text>
+          <text 
+          wx:if="{{!item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabN}}
+          </text>
+    </view>
+    <view class='anwserItems'
+        wx:if="{{item.IsAnswered}}"
+        wx:for="{{item.Answers}}"
+        wx:for-item="Answers"
+        wx:key="id"
+        > 
+          <image src='../../dist/images/icon/beforeAnwser.png'></image>
+          <view class='anwserDec'>
+            <image src='{{anwser.userPhotoUrl}}'></image>
+            <view class='anwserDec-content'>
+              <text class='fl red'>{{Answers.name}}</text>
+              <text class='fr grey'>{{Answers.AnswerTime}}</text>
+            </view>
+            <view class='anwserDec-content'>
+              <view class='fl'>
+                <text>{{Answers.Answer}}</text>
+              </view>
+              
+            </view>
+          </view>
+        </view>
+  </view>
+  
+</view>
+
+
+
+

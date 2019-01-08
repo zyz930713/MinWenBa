@@ -1,0 +1,39 @@
+/* pages/register/register.wxss */
+
+.inline-show{
+  display: inline-block
+}
+.chioceRole{
+  margin:40rpx 0;
+}
+.role-label{
+  margin-right: 50rpx;
+}
+.registerInfo input{
+  padding: 10rpx;
+  box-shadow: 2px 2px 6px #ddd;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 40rpx;
+  margin-top: 10rpx;
+}
+.btn-area{
+  margin-top: 40rpx;
+}
+.btn-area button{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  width: 200rpx;
+  display: inline-block;
+  background-color: #5EC463;
+  color:#fff;
+}
+.registerInfo .subBtn{
+  background-color: #5EC463;
+  color:#fff;
+}
+.btn-area 
+.registerInfo .resBtn{
+  background-color: #5EC463;
+  color:#fff;
+}

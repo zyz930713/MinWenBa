@@ -1,0 +1,16 @@
+
+<!--pages/note/note.wxml-->
+<view class='container'>
+  <view class='note'>
+    <text>笔记的内容</text>
+    <input type='text'></input>
+  </view>
+  <view class='tag'>
+    <text>所有分类</text>
+  </view>
+  <view class='subBtn'>
+    <button>提交笔记</button>
+  </view>
+</view>
+<text>pages/note/note.wxml</text>
+

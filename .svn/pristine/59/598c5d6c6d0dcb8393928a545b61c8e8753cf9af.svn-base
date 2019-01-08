@@ -1,0 +1,94 @@
+/* pages/add-comment/add-comment.wxss */
+.note-content{
+  width: 590rpx;
+  min-height: 450rpx;
+  height: auto;
+  margin-top: 26px;
+  background-color: #fff;
+}
+.text-title{
+  display: inline-block;
+  width: 510rpx;
+  table-layout:fixed;
+  word-break:break-all;
+  overflow: hidden;
+  font-size: 14px;
+  color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px #ddd dashed;
+}
+.area{
+  width:510rpx ;
+  height:252rpx;
+  font-size: 30rpx;
+  text-indent: 28rpx;
+  padding: 36rpx;
+  overflow: hidden;   
+  position: relative; 
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  left: 400rpx;
+  top: -5rpx;
+}
+.hint{
+   font-size: 28rpx;
+   position: absolute;
+   top: 120rpx;
+   left: 30rpx;
+   color: #FF6600;
+}
+.isPublish{
+  width: 140rpx;
+  height: 60rpx;
+  font-size: 12px;
+  float: right;
+  color:#666;
+}
+
+
+
+
+
+.tag{
+  width: 590rpx;
+  margin-top:0;
+  height: 100rpx;
+}
+.tag .tag-title{
+  font-size: 12px;
+  color: #999;
+  margin-right: 40rpx;
+  vertical-align: text-top;
+}
+.normal{
+  border:#666;
+}
+.isChecked{
+  border:1px solid #009944!important;
+  color:#009944!important;
+}
+.tagChoose{
+  display: inline-block;
+  color: #666;
+  font-size: 12px;
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  margin-right: 40rpx;
+}
+.chooseShow{
+  opacity: 0.2;
+  transform: scale(0.9,0.9);
+}
+.subBtn button{
+  margin-top:0;
+  width: 590rpx;
+  height: 100rpx;
+  color: #fff;
+  background-color: #5EC463;
+  border-radius: 100rpx;
+}

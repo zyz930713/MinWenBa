@@ -1,0 +1,30 @@
+<!--pages/my-answers/my-answers.wxml-->
+
+<view class='container'>
+  <view class='answersItem' wx:for="{{answersItem}}" wx:key="id">
+    <view class='answers-header'>
+      <image src='../../dist/images/icon/answers-icon.png'></image>
+      <text class='course-time'>{{item.CouStartTime}}</text>
+      <text class='course-name'>{{item.CourseName}}</text>
+    </view>
+    <view class='answers-ques'>
+      <image src='../../dist/images/icon/ques-icon.png'></image>
+      <text>{{item.QuestionContent}}</text>
+    </view>
+    <view class='answers-content'>
+      
+      <view>
+      <image src='../../dist/images/icon/my-answer-icon.png'></image>
+      <view class='answer-desc'>
+        <text>{{item.Answer}}</text>
+      </view>
+      </view>
+      <text class='answer-time'>{{item.AnswerTime}}</text>
+      <text wx:if="{{item.PublicFlag == 'Y'}}" class='green answer-flag'>公开</text>
+      <text wx:if="{{item.PublicFlag == 'N'}}" class='grey answer-flag'>未公开</text>
+    </view>
+  </view>
+</view>
+
+
+

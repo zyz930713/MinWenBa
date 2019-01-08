@@ -1,0 +1,35 @@
+
+<!--pages/note/note.wxml-->
+<view class='container' style='min-height:100vh'>
+  <view class='note-content'>
+    <text class='text-title'>笔记的内容</text>
+    <textarea 
+    class="area" 
+    placeholder='笔记的内容。。。' 
+    minlength="{{min}}" 
+    maxlength="{{max}}" 
+    bindinput="inputs"
+    value="{{subValue}}"
+    >
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+      <text class="hint">{{texts}}</text>
+    </textarea>
+    <button class="isPublish {{isPublicTab?'isChecked':'normal'}}" bindtap='chooseShow'>{{publishText}}</button>
+  </view>
+  <view class='tag'>
+    <text class='tag-title'>所有分类</text>
+    <button 
+    wx:for="{{LabelType}}" 
+    data-idx="{{index}}" 
+    wx:key="unique" 
+    class="tagChoose {{tagCheckedNum == index ?'isChecked':'normal'}}" 
+    bindtap="chooseTag">
+    {{item}}
+    </button>
+  </view>
+  <view class='subBtn'>
+    <button bindtap='submit'>提交笔记</button>
+  </view>
+</view>
+
+

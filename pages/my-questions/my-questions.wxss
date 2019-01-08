@@ -1,0 +1,92 @@
+/* pages/my-questions/my-questions.wxss */
+
+.questionsItem{
+  width: 680rpx;
+  background-color:#fff;
+  min-height:100rpx;
+  padding: 24rpx;
+  height:auto;
+  margin-bottom:20rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 6px #ddd;
+  margin-top: 60rpx;
+  overflow: hidden;
+   
+}
+
+
+.questionsItem .course-name{
+  width: 50%;
+  height: 30rpx;
+  border-radius: 30rpx;
+  background-color: #FE7F69;
+  color: #fff;
+  padding: 10rpx;
+  text-align: center;
+  font-size: 14px;
+}
+.quesDec{
+  font-size: 14px;
+  margin-left: 30rpx;
+  padding-top: 20rpx;
+}
+.anwserItems{
+  width: 680rpx;
+  background-color:#fff;
+  min-height:150rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 6px #ddd;
+  padding:20rpx;
+  font-size: 14px;
+}
+.anwserItems image{
+  width: 28rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  margin-top: 22rpx;
+  vertical-align:top;
+}
+.anwserDec{
+  width: 90%;
+  display: inline-block;
+  margin-left: 12rpx;
+  border-bottom: 1px solid #DEDEDE;
+}
+.anwserDec-content{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.red{
+  color:#FE7F69
+}
+.grey{
+  color:#999
+}
+.isAnwser{
+  display: inline-block;
+  float: right;
+  width: 80rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  font-size: 14px;
+  text-align: center;
+  line-height: 8px;
+}
+.anwsered{
+  background-color:#4A9D4F ;
+  color: #fff;
+}
+.noAnwser{
+  background-color:#fff;
+  color:#4A9D4F;
+  border:1px solid #4A9D4F;
+}

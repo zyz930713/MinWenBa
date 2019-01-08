@@ -1,0 +1,10 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button
+      open-type="getUserInfo"
+      bindgetuserinfo="getUserInfo"
+      bindtap='login'
+      > 点击授权获得您的个人信息 </button>
+  </view>
+</view>

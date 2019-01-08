@@ -1,0 +1,121 @@
+<!--pages/plaza/plaza.wxml-->
+
+<view class='wrapper'>
+  <scroll-view scroll-x style='width:100%'>
+    <view class='navbar'>
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+  </scroll-view>
+  <view hidden="{{currentTab!==0}}">
+    <view class='container'>
+      <view wx:for="{{courseItems}}" wx:key="unique">
+        <view class='questions-wrap'>
+        <view class='questionContent'>
+        <view>
+          <text class='quesNum'>{{item.CourseName}}</text>
+        </view>
+        <view class='quesDec'>
+            <text>
+              {{item.QuestionContent}}
+            </text>
+        </view>
+          <text 
+          wx:if="{{item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabY}}
+          </text>
+          <text 
+          wx:if="{{!item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabN}}
+          </text>
+        </view>
+        <view class='anwserItems'
+        wx:if="{{item.IsAnswered}}"
+        wx:for="{{item.Answers}}"
+        wx:for-item="Answers"
+        wx:key="id"
+        > 
+          <image src='../../dist/images/icon/beforeAnwser.png'></image>
+          <view class='anwserDec'>
+            <image src='{{anwser.userPhotoUrl}}'></image>
+            <view class='anwserDec-content'>
+              <text class='fl red'>{{Answers.name}}</text>
+              <text class='fr grey'>{{Answers.AnswerTime}}</text>
+              <view class='doingShow'>
+              <text wx:if="{{!Answers.IsCollected}}" class='noColl' data-answerId="{{Answers.AnswerId}}" bindtap='toColl'>收藏</text><text wx:if="{{Answers.IsCollected}}" class='hasColl'>已收藏</text><text class='line'>|</text><text wx:if="{{!Answers.IsLiked}}" class='noLiked' data-answerId="{{Answers.AnswerId}}" bindtap='toLike'>点赞({{Answers.LikeCount}})</text><text wx:if="{{Answers.IsLiked}}" class='hasLiked'>已点赞({{Answers.LikeCount}})</text>
+              </view>
+            </view>
+            <view class='anwserDec-content'>
+              <navigator
+               class='fl'
+               url='../add-comment/add-comment?answerText={{Answers.Answer}}&&noteId={{Answers.AnswerId}}'
+            >
+            {{Answers.Answer}}
+          </navigator>
+            </view>
+          </view>
+          <view
+          class="commentsDec" 
+          wx:if="{{Answers.IsCommented}}"
+          wx:for="{{Answers.Comments}}"
+          wx:for-item="Comments"
+          wx:key="id"
+          >
+          <view class="commentsDec-content">
+            <text class='fl red'>{{Comments.name}}</text>对<text class='red'>{{Answers.name}}</text>的评论
+            <text class='fr grey'>{{Comments.CommentTime}}</text>
+            <view class='doingShow'>
+                <text wx:if="{{!Comments.IsCollected}}" class='noColl' data-commentId="{{Comments.CommentId}}" bindtap='toCollP'>收藏</text><text wx:if="{{Comments.IsCollected}}" class='hasColl'>已收藏</text><text class='line'>|</text><text wx:if="{{!Comments.IsLiked}}" class='noLiked' data-commentId="{{Comments.CommentId}}" bindtap='toLikeP'>点赞({{Comments.LikeCount}})</text><text wx:if="{{Comments.IsLiked}}" class='hasLiked'>已点赞({{Comments.LikeCount}})</text>
+            </view>
+          </view>
+          <view class="commentsDec-content">
+            <text class="fl">{{Comments.Comment}}</text>
+          </view>
+        </view>
+        </view>
+      </view>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{currentTab!==1}}">
+    <view class='container'>
+      <view class='my-info'>
+        <view class='info-header'>
+            <view class='header-wrap'>
+               <image src='../../dist/images/icon/rank-one.png' class='info-img'></image>
+               <text class='info-name'>我的名字</text>
+               <text class='my-rank'>第六名</text>
+            </view>
+            <text class='info-score'>1411</text>
+        </view>
+        <view class='info-desc'>
+          <text class='desc-item'>提问<text class='green'>10</text>个</text>
+          <text class='desc-item'>被点赞<text class='green'>15</text></text> 
+          <text class='desc-item'>回答问题<text class='green'>20</text>个</text>  
+            
+        </view>
+      </view>
+      <view class='all-info'>
+        <view class='info-item'>
+          <view class='info-header'>
+            <image class='info-img' url="../../dist/images/icon/rank-one.png"></image>
+            <text class='my-name'>我的名字</text>
+            <text class='my-rank'>第六名</text>
+            <text class='info-score'></text>
+          </view>
+          <view class='info-desc'>
+            提问<text>10</text>个
+            被点赞<text>15</text>
+            回答问题<text>20</text>个
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+ </view>
+
+
+

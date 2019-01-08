@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/plaza/plaza",
+    "pages/home/home",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/note/note",
+    "pages/my-questions/my-questions",
+    "pages/study-record/study-record",
+    "pages/my-answers/my-answers",
+    "pages/mine/mine",
+    "pages/add-question/add-question",
+    "pages/add-anwser/add-anwser",
+    "pages/add-comment/add-comment",
+    "pages/my-notes/my-notes",
+    "pages/edit-note/edit-note"
+    
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "dist/images/icon/home.png",
+        "selectedIconPath": "dist/images/icon/homeChoose.png"
+      },
+      {
+        "text": "广场",
+        "pagePath": "pages/plaza/plaza",
+        "iconPath": "dist/images/icon/plaza.png",
+        "selectedIconPath": "dist/images/icon/plazaChoose.png"
+      },
+      {
+        "text": "写笔记",
+        "pagePath": "pages/note/note",
+        "iconPath": "dist/images/icon/note.png",
+        "selectedIconPath": "dist/images/icon/noteChoose.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "dist/images/icon/mine.png",
+        "selectedIconPath": "dist/images/icon/mineChoose.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "问吧",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eee"
+  }
+}

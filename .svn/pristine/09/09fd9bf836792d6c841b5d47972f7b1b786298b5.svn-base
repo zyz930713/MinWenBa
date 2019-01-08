@@ -1,0 +1,15 @@
+<!--pages/my-notes/my-notes.wxml-->
+<view class='container'>
+  <view class='notesItems' wx:for="{{notesItems}}" wx:key="id">
+    <view class='notes-header'>
+      <text class='notes-time'>{{item.LastUpdateDate}}</text>
+    </view>
+    <navigator url=''>
+      <view class='notes-content'>
+        <text class='notes-desc'>{{item.Notes}}</text>
+      </view>
+    </navigator>
+    
+  </view>
+</view>
+

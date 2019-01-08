@@ -1,0 +1,12 @@
+<!--pages/add-question/add-question.wxml-->
+<view class='container' style='min-height:70vh'>
+  <view class='note-content'>
+    <text class='text-title'>{{CourseName}}</text>
+    <textarea class="area" placeholder='请输入问题' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+    </textarea>
+  </view>
+  <view class='subBtn'>
+    <button bindtap='submit'>提交问题</button>
+  </view>
+</view>

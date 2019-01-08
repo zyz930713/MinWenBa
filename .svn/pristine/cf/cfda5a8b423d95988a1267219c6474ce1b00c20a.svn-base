@@ -1,0 +1,61 @@
+/* pages/my-answers/my-answers.wxss */
+.answersItem{
+  width: 680rpx;
+  background-color:#fff;
+  min-height:100rpx;
+  padding: 24rpx;
+  height:auto;
+  margin-bottom:20rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 6px #ddd;
+  margin-top: 20rpx;
+}
+.answers-header image,.answers-ques image,.answers-content image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.answers-header image{
+  margin-left: 20rpx;
+}
+.answers-header .course-time{
+  color: #333333;
+  font-size: 14px;
+  margin-left: 20rpx;
+}
+.answers-header .course-name{
+  color: #333333;
+  font-size: 14px;
+  margin-left: 40rpx;
+}
+.answers-ques text,.answers-content .answer-desc{
+  color: #333333;
+  font-size: 12px;
+  margin-left: 20rpx;
+  table-layout:fixed;
+  width: 600rpx;
+  word-break:break-all;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.answers-ques{
+  padding-bottom: 24rpx;
+  border-bottom: 1px #DDDDDD dashed
+}
+.answers-content{
+  padding-top: 18rpx;
+}
+.answers-content .answer-time{
+  color: #ACACAC;
+  font-size: 12px;
+  float: right
+}
+.answers-content .answer-flag{
+  font-size: 12px;
+  margin-left: 48rpx;
+}
+.answers-content .green{
+  color:#4A9D4F
+}
+.answers-content .grey{
+  color:#ACACAC
+}

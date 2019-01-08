@@ -1,0 +1,86 @@
+<!--pages/register/register.wxml-->
+<view class='container'style="min-height:100%">
+  <view class='chioceRole'>
+      <radio-group name="role-group">
+        <text class='role-label'>身份</text>
+        <label bindtap='toStudent'>
+          <radio value="S" />
+          学生
+        </label>
+        <label bindtap='toTeacher'>
+          <radio value="T" />
+          老师
+        </label>
+      </radio-group>
+  </view>
+  <form wx:if="{{studentFlag}}" bindsubmit='studentSubmit' bindreset='formReset' class='registerInfo'>
+      <view>
+        <label>项目编号</label>
+        <input name="ProjectNum" placeholder="" />
+      </view>
+      <view>
+        <label>姓名</label>
+        <input name="StudentName" placeholder="" />
+      </view>
+      <view>
+        <label>手机号码</label>
+        <input name="ipone" placeholder="" />
+      </view>
+      <view>
+        <label>学号</label>
+        <input name="StudentNum" placeholder="" />
+      </view>
+      <view class='chioceSex'>
+        <radio-group name="Gender">
+          <text class='role-label'>性别</text>
+          <label>
+            <radio value="0" />
+            男
+          </label>
+          <label>
+            <radio value="1" />
+           女
+          </label>
+        </radio-group>
+      </view>
+      <view class="btn-area">
+        <button form-type="submit">提交</button>
+        <button form-type="reset">重置</button>
+      </view>
+  </form>
+
+  <!-- 教师注册 -->
+  <form wx:if="{{teacherFlag}}" bindsubmit='teacherSubmit' bindreset='formReset' class='registerInfo'>
+      <view>
+        <label>姓名</label>
+        <input name="TeacherName" placeholder="" />
+      </view>
+      <view>
+        <label>手机号码</label>
+        <input name="ipone" placeholder="" />
+      </view>
+      <view>
+        <label>教师编号</label>
+        <input name="TeacherNum" placeholder="" />
+      </view>
+      <view class='chioceSex'>
+        <radio-group name="Gender">
+          <text class='role-label'>性别</text>
+          <label>
+            <radio value="0" />
+            男
+          </label>
+          <label>
+            <radio value="1" />
+           女
+          </label>
+        </radio-group>
+      </view>
+      <view class="btn-area">
+        <button form-type="submit">提交</button>
+        <button form-type="reset">重置</button>
+      </view>
+  </form>
+    
+  
+</view>

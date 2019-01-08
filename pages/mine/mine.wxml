@@ -1,0 +1,75 @@
+<!--pages/mine/mine.wxml-->
+<view class='container'>
+  <view class='my-header'>
+    <view class="userinfo">
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  </view>
+  <view class='my-item my-account'>
+    <text class='my-item-header'>我的账户</text>
+    <view>
+      <view class='my-item-subItem'>
+        <navigator class='my-item-sunNav'>
+          <image src='../../dist/images/icon/study-mony.png'></image>
+          <text>学习币</text>
+        </navigator>
+      </view>
+      <view class='my-item-subItem'>
+        <navigator url='../study-record/study-record' class='my-item-subNav'> 
+          <image src='../../dist/images/icon/study-history.png'></image>
+          <text>学习记录</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='my-item my-account'>
+    <text class='my-item-header'>我的数据</text>
+    <view>
+      <view class='my-item-subItem'>
+        <navigator class='my-item-sunNav'>
+          <image src='../../dist/images/icon/study-data.png'></image>
+          <text>学习数据</text>
+        </navigator>
+      </view>
+      <view class='my-item-subItem'>
+        <navigator class='my-item-subNav'> 
+          <image src='../../dist/images/icon/xunzhang.png'></image>
+          <text>勋章</text>
+        </navigator>
+      </view>
+      <view class='my-item-subItem'>
+        <navigator class='my-item-subNav'> 
+          <image src='../../dist/images/icon/biyezhen.png'></image>
+          <text>毕业证</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='my-item my-account'>
+    <text class='my-item-header'>我的足迹</text>
+    <view>
+      <view class='my-item-subItem'>
+        <navigator url='../my-answers/my-answers' class='my-item-sunNav'>
+          <image style='width:50rpx;height:60rpx;padding-left:50rpx' src='../../dist/images/icon/answer.png'></image>
+          <text>回答</text>
+        </navigator>
+      </view>
+      <view class='my-item-subItem'>
+        <navigator url='../my-questions/my-questions' class='my-item-subNav'> 
+          <image src='../../dist/images/icon/question.png'></image>
+          <text>提问</text>
+        </navigator>
+      </view>
+      <view class='my-item-subItem'>
+        <navigator url='../my-notes/my-notes' class='my-item-subNav'> 
+          <image src='../../dist/images/icon/notes.png'></image>
+          <text>笔记</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

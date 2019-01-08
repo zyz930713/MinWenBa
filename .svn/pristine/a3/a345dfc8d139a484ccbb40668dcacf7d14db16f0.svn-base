@@ -1,0 +1,135 @@
+<!--pages/plaza/plaza.wxml-->
+
+<view class='wrapper'>
+  <scroll-view scroll-x style='width:100%'>
+    <view class='navbar'>
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+  </scroll-view>
+  <view hidden="{{currentTab!==0}}">
+    <view class='container'>
+      <view wx:for="{{courseItems}}" wx:key="unique">
+        <view class='questions-wrap'>
+        <view class='questionContent'>
+        <view>
+          <text class='quesNum'>{{item.CourseName}}</text>
+        </view>
+        <view class='quesDec'>
+            <text>
+              {{item.QuestionContent}}
+            </text>
+        </view>
+          <text 
+          wx:if="{{item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabY}}
+          </text>
+          <text 
+          wx:if="{{!item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabN}}
+          </text>
+        </view>
+        <view class='anwserItems'
+        wx:if="{{item.IsAnswered}}"
+        wx:for="{{item.Answers}}"
+        wx:for-item="Answers"
+        wx:key="id"
+        > 
+          <image class='anwser-icon' src='../../dist/images/icon/beforeAnwser.png'></image>
+          <view class='anwserDec'>
+            <image class='anwser-HeadImg' src='{{Answers.HeadImg}}'></image>
+            <view class='anwserDec-content'>
+              <text class='fl red anwserName'>{{Answers.name}}</text>
+              <text class='fr grey'>{{Answers.AnswerTime}}</text>
+              <view class='doingShow'>
+              <text wx:if="{{!Answers.IsCollected}}" class='noColl' data-answerId="{{Answers.AnswerId}}" bindtap='toColl'>收藏</text><text wx:if="{{Answers.IsCollected}}" class='hasColl'>已收藏</text><text class='line'>|</text><text wx:if="{{!Answers.IsLiked}}" class='noLiked' data-answerId="{{Answers.AnswerId}}" bindtap='toLike'>点赞({{Answers.LikeCount}})</text><text wx:if="{{Answers.IsLiked}}" class='hasLiked'>已点赞({{Answers.LikeCount}})</text>
+              </view>
+            </view>
+            <view class='anwserDec-content'>
+              <view class='fl theAnswer'>
+                <navigator
+                url='../add-comment/add-comment?answerText={{Answers.Answer}}&&noteId={{Answers.AnswerId}}'
+                >
+                  {{Answers.Answer}}
+                </navigator>
+              </view>   
+            </view>
+          </view>
+          <view
+          class="commentsDec" 
+          wx:if="{{Answers.IsCommented}}"
+          wx:for="{{Answers.Comments}}"
+          wx:for-item="Comments"
+          wx:key="id"
+          >
+          <image class='Comment-HeadImg' src='{{Comments.HeadImg}}'></image>
+          <view class="commentsDec-content">
+            <text class='fl red commentName'>{{Comments.name}}</text>的评论
+            <text class='fr grey'>{{Comments.CommentTime}}</text>
+            <view class='doingShow'>
+                <text wx:if="{{!Comments.IsCollected}}" class='noColl' data-commentId="{{Comments.CommentId}}" bindtap='toCollP'>收藏</text><text wx:if="{{Comments.IsCollected}}" class='hasColl'>已收藏</text><text class='line'>|</text><text wx:if="{{!Comments.IsLiked}}" class='noLiked' data-commentId="{{Comments.CommentId}}" bindtap='toLikeP'>点赞({{Comments.LikeCount}})</text><text wx:if="{{Comments.IsLiked}}" class='hasLiked'>已点赞({{Comments.LikeCount}})</text>
+            </view>
+          </view>
+          <view class="commentsDec-content">
+            <text class="fl theComment">{{Comments.Comment}}</text>
+          </view>
+        </view>
+        </view>
+      </view>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{currentTab!==1}}">
+    <view class='container'>
+      <view wx:for="{{rankInfo}}" wx:key="id" wx:if="{{roleInfo.Role == 'S' && item.UserId == roleInfo.UserId}}"  class='my-info'>
+        <view class='info-header'>
+            <view class='header-wrap'>
+               <image src='{{item.HeadImg}}' class='info-img'></image>
+               <text class='info-name'>{{item.name}}</text>
+               <text class='my-rank'>第{{index+1}}名</text>
+            </view>
+            <text class='info-score'>{{item.score}}</text>
+        </view>
+        <view class='info-desc'>
+          <text class='desc-item'>提问<text class='green'>{{item.QuestionCount}}</text>个</text>
+            <text class='desc-item'>被点赞<text class='green'>{{item.LikeCount}}</text>个</text>
+            <text class='desc-item'>回答问题<text class='green'>{{item.AnswerCount}}</text>个</text>
+        </view>
+      </view>
+      <view class='all-info'>
+        <view class='info-item' wx:for="{{rankInfo}}" wx:key="unique">
+          <view class='info-header'>
+              <view wx:if="{{index == 0}}">
+                <image src='../../dist/images/icon/rank-one.png' class='user-head'></image>
+              </view>
+              <view wx:if="{{index == 1}}">
+                <image src='../../dist/images/icon/rank-two.png' class='user-head'></image>
+              </view>
+              <view wx:if="{{index == 2}}">
+                <image src='../../dist/images/icon/rank-three.png' class='user-head'></image>
+              </view>
+              <view wx:if="{{index >= 3}}">
+                <text>{{index+1}}</text>
+              </view>
+            <view class='header-wrap'>
+              <image src='{{item.HeadImg}}' class='info-img'></image>
+              <text class='info-name'>{{item.name}}</text>
+            </view>
+            <text class='info-score'>{{item.score}}</text>
+          </view>
+          <view class='info-desc'>
+            <text class='desc-item'>提问<text class='green'>{{item.QuestionCount}}</text>个</text>
+            <text class='desc-item'>被点赞<text class='green'>{{item.LikeCount}}</text>个</text>
+            <text class='desc-item'>回答问题<text class='green'>{{item.AnswerCount}}</text>个</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+ </view>
+
+
+

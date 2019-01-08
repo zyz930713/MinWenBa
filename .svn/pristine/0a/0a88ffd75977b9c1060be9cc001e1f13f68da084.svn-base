@@ -1,0 +1,165 @@
+/* pages/plaza/plaza.wxss */
+
+.navbar{
+  flex: none;
+  display: flex;
+}
+.navbar .item{
+  position: relative;
+  font-size: 16px;
+  flex: auto;
+  color:#999999;
+  text-align: center;
+  line-height: 80rpx;
+  min-width: 240rpx;
+}
+.navbar .item.active{
+  color: #00A0E9;
+}
+.navbar .item.active::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #00A0E9;
+} 
+
+
+/* 课前问题 */
+.questions-wrap{
+  width: 680rpx;
+  text-align: left;
+  margin-top: 30rpx;
+  padding:15rpx;
+  font-size: 12px;
+  color:#000;
+}
+.questionContent{
+  background-color:#fff;
+  min-height:100rpx;
+  padding: 24rpx;
+  height:auto;
+  margin-bottom:20rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 6px #ddd;
+  overflow: hidden;
+}
+.anwserItems{
+  background-color:#fff;
+  min-height:150rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 6px #ddd;
+  padding:20rpx;
+}
+.anwserItems image{
+  width: 28rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  margin-top: 22rpx;
+  vertical-align:top;
+}
+.anwserDec{
+  width: 90%;
+  display: inline-block;
+  margin-left: 12rpx;
+  border-bottom: 1px solid #DEDEDE;
+  position: relative;
+}
+.anwserDec-content,.commentsDec-content{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+  
+}
+.quesNum{
+  width: 50%;
+  height: 30rpx;
+  border-radius: 30rpx;
+  background-color: #FE7F69;
+  color: #fff;
+  padding: 10rpx;
+  text-align: center;
+}
+.quesDec{
+  margin-left: 16rpx;
+  width: 70%;
+}
+.isAnwser{
+  display: inline-block;
+  float: right;
+  width: 80rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  font-size: 14px;
+  text-align: center;
+  line-height: 8px;
+}
+.anwsered{
+  background-color:#4A9D4F;
+  color: #fff;
+}
+.noAnwser{
+  background-color:#fff;
+  color:#4A9D4F;
+  border:1px solid #4A9D4F;
+}
+.doingShow{
+  
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.doingShow .hasColl{
+  color: #999999;
+}
+.doingShow .noColl{
+  color: #1D2088;
+}
+.doingShow .hasLiked{
+  color: #FE7F69;
+}
+.doingShow .noLiked{
+  color: #999999;
+}
+.doingShow .line{
+  color: #999999;
+  margin:0 16rpx;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.red{
+  color:#FE7F69
+}
+.grey{
+  color:#999
+}
+.commentsDec{
+  width:87%;
+  margin-left:30rpx;
+  border-bottom:1px solid #dedede;
+  padding:20rpx;
+  position: relative;
+}
+
+
+
+/* 我的提问 */
+.my-question{
+  position: fixed;
+  right: 80rpx;
+  bottom: 40rpx;
+}
+.my-question image{
+  width: 70rpx;
+  height: 70rpx;
+}

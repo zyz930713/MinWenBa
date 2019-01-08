@@ -1,0 +1,14 @@
+<!--pages/add-anwser/add-anwser.wxml-->
+<view class='container' style='min-height:70vh'>
+  <view class='note-content'>
+    <text class='text-title'>{{questionText.questionText}}</text>
+    <textarea class="area" placeholder='请输入你的答案' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+    </textarea>
+    <button class="isPublish {{isPublicTab?'isChecked':'normal'}}" bindtap='chooseShow'>{{publishText}}</button>
+  </view>
+  
+  <view class='subBtn'>
+    <button bindtap='submit'>提交答案</button>
+  </view>
+</view>

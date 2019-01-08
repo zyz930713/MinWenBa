@@ -1,0 +1,89 @@
+<!--pages/plaza/plaza.wxml-->
+
+<view class='wrapper'>
+  <scroll-view scroll-x style='width:100%'>
+    <view class='navbar'>
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+  </scroll-view>
+  <view hidden="{{currentTab!==0}}">
+    <view class='container'>
+      <view wx:for="{{courseItems}}" wx:key="unique">
+        <view class='questions-wrap'>
+        <view class='questionContent'>
+        <view>
+          <text class='quesNum'>{{item.CourseName}}</text>
+        </view>
+        <view class='quesDec'>
+            <text>
+              {{item.QuestionContent}}
+            </text>
+        </view>
+          <text 
+          wx:if="{{item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabY}}
+          </text>
+          <text 
+          wx:if="{{!item.IsAnswered}}"
+          class="isAnwser {{item.IsAnswered?'anwsered':'noAnwser'}}"
+          >
+            {{anwserTabN}}
+          </text>
+        </view>
+        <view class='anwserItems'
+        wx:if="{{item.IsAnswered}}"
+        wx:for="{{item.Answers}}"
+        wx:for-item="Answers"
+        wx:key="id"
+        > 
+          <image src='../../dist/images/icon/beforeAnwser.png'></image>
+          <view class='anwserDec'>
+            <image src='{{anwser.userPhotoUrl}}'></image>
+            <view class='anwserDec-content'>
+              <text class='fl red'>{{Answers.name}}</text>
+              <text class='fr grey'>{{Answers.AnswerTime}}</text>
+              <view class='doingShow'>
+              <text wx:if="{{!Answers.IsCollected}}" class='noColl' data-answerId="{{Answers.AnswerId}}" bindtap='toColl'>收藏</text><text wx:if="{{Answers.IsCollected}}" class='hasColl'>已收藏</text><text class='line'>|</text><text wx:if="{{!Answers.IsLiked}}" class='noLiked' data-answerId="{{Answers.AnswerId}}" bindtap='toLike'>点赞({{Answers.LikeCount}})</text><text wx:if="{{Answers.IsLiked}}" class='hasLiked'>已点赞({{Answers.LikeCount}})</text>
+              </view>
+            </view>
+            <view class='anwserDec-content'>
+              <navigator
+               class='fl'
+               url='../add-comment/add-comment?answerText={{Answers.Answer}}&&noteId={{Answers.AnswerId}}'
+            >
+            {{Answers.Answer}}
+          </navigator>
+            </view>
+          </view>
+          <view
+          class="commentsDec" 
+          wx:if="{{Answers.IsCommented}}"
+          wx:for="{{Answers.Comments}}"
+          wx:for-item="Comments"
+          wx:key="id"
+          >
+          <view class="commentsDec-content">
+            <text class='fl red'>{{Comments.name}}</text>对<text class='red'>{{Answers.name}}</text>的评论
+            <text class='fr grey'>{{Comments.CommentTime}}</text>
+            <view class='doingShow'>
+                <text wx:if="{{!Comments.IsCollected}}" class='noColl' data-commentId="{{Comments.CommentId}}" bindtap='toCollP'>收藏</text><text wx:if="{{Comments.IsCollected}}" class='hasColl'>已收藏</text><text class='line'>|</text><text wx:if="{{!Comments.IsLiked}}" class='noLiked' data-commentId="{{Comments.CommentId}}" bindtap='toLikeP'>点赞({{Comments.LikeCount}})</text><text wx:if="{{Comments.IsLiked}}" class='hasLiked'>已点赞({{Comments.LikeCount}})</text>
+            </view>
+          </view>
+          <view class="commentsDec-content">
+            <text class="fl">{{Comments.Comment}}</text>
+          </view>
+        </view>
+        </view>
+      </view>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{currentTab!==1}}">
+    排行
+  </view>
+ </view>
+
+
+

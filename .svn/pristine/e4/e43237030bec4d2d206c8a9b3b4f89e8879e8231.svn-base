@@ -1,0 +1,163 @@
+Page({
+  data: {
+    navbar: ["学习广场", "排行榜"],
+    currentTab: 0,
+    courseItems: [],
+    anwserTabY: "已答",
+    anwserTabN: "未答",
+    collectFlag: ["收藏","已收藏"],
+    
+  },
+
+  //获取课程信息
+  onLoad: function () {
+    var courseItems = this.data.courseItems;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 1000
+    })
+    wx.request({
+      url: 'https://www.tisys-club.com/api/Xxgc/GetxxgcByProject/10039',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: (res) => {
+        courseItems = (res.data)
+        console.log(courseItems)
+        this.setData({
+          courseItems
+        })
+      }
+    })
+  },
+
+  
+
+  //广场排行切换
+  navbarTap: function (e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  },
+
+  //返回刷新
+  onShow:function(){
+    var currentTab = this.data.currentTab;
+    var courseItems = this.data.courseItems;
+
+
+    currentTab = 0
+    courseItems = []
+
+    this.setData({
+      currentTab,
+      courseItems
+    })
+
+    this.onLoad();
+  },
+   
+  //点击收藏回答
+  toColl:function(e){
+    wx.request({
+      url: 'https://www.tisys-club.com/api/Xxgc/PostCollection',
+      method:'POST',
+      data:{
+        "NoteId": e.currentTarget.dataset.answerid,
+      }, 
+      success:(res) => {
+        var currentTab = this.data.currentTab;
+        var courseItems = this.data.courseItems;
+
+
+        currentTab = 0
+        courseItems = []
+
+        this.setData({
+          currentTab,
+          courseItems
+        })
+
+        this.onLoad();
+      }
+    })
+  },
+
+  //点击收藏评论
+  toCollP: function (e) {
+    wx.request({
+      url: 'https://www.tisys-club.com/api/Xxgc/PostCollection',
+      method: 'POST',
+      data: {
+        "CommentId": e.currentTarget.dataset.commentid,
+      },
+      success: (res) => {
+        var currentTab = this.data.currentTab;
+        var courseItems = this.data.courseItems;
+
+
+        currentTab = 0
+        courseItems = []
+
+        this.setData({
+          currentTab,
+          courseItems
+        })
+
+        this.onLoad();
+      }
+    })
+    console.log(e.currentTarget.dataset.commentid)
+  },
+
+  //点赞回答
+  toLike: function (e) {
+    wx.request({
+      url: 'https://www.tisys-club.com/api/Xxgc/PostLike',
+      method: 'POST',
+      data: {
+        "NoteId": e.currentTarget.dataset.answerid,
+      },
+      success: (res) => {
+        var currentTab = this.data.currentTab;
+        var courseItems = this.data.courseItems;
+
+
+        currentTab = 0
+        courseItems = []
+
+        this.setData({
+          currentTab,
+          courseItems
+        })
+
+        this.onLoad();
+      }
+    })
+  },
+
+  //点赞评论
+  toLikeP: function (e) {
+    wx.request({
+      url: 'https://www.tisys-club.com/api/Xxgc/PostLike',
+      method: 'POST',
+      data: {
+        "CommentId": e.currentTarget.dataset.commentid,
+      },
+      success: (res) => {
+        var currentTab = this.data.currentTab;
+        var courseItems = this.data.courseItems;
+
+
+        currentTab = 0
+        courseItems = []
+
+        this.setData({
+          currentTab,
+          courseItems
+        })
+
+        this.onLoad();
+      }
+    })
+  },
+})

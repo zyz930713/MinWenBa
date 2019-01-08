@@ -1,0 +1,24 @@
+/* pages/my-notes/my-notes.wxss */
+.notesItems{
+  width: 680rpx;
+  background-color:#fff;
+  min-height:100rpx;
+  padding: 24rpx;
+  height:auto;
+  margin-bottom:20rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 1px 6px #ddd;
+  margin-top: 20rpx;
+}
+.notes-header{
+  overflow: hidden
+}
+.notes-time{
+  font-size: 12px;
+  color: #999;
+  float: right;
+}
+.notes-desc{
+  font-size: 13px;
+  color: #333;
+}

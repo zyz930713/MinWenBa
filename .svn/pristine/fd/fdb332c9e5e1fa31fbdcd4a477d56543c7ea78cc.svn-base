@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/plaza/plaza",
+    "pages/note/note",
+    "pages/mine/mine"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "广场",
+        "pagePath": "pages/plaza/plaza"
+      },
+      {
+        "text": "写笔记",
+        "pagePath": "pages/note/note"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "问吧",
+    "navigationBarTextStyle": "black"
+  }
+}

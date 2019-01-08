@@ -1,0 +1,11 @@
+<!--pages/study-record/study-record.wxml-->
+<view class='container'>
+  <view class='answersItem' wx:for="{{studyItem}}" wx:key="id">
+    <view class='record-header'>
+      <text class='course-time fr'>{{item.StartDate}}</text>
+      <image class='fr' src='../../dist/images/icon/answers-icon.png'></image>
+      <text class='course-name'>{{item.CourseName}}</text>
+      
+    </view>
+  </view> 
+</view>
